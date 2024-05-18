@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanificacionReceta.Views.VerDetallesView"
+             Title="ChefMate" Background="White">
+    <Grid RowDefinitions=".1*,.9*">
+        <Grid ColumnDefinitions=".2*,.6*">
+            <Image Grid.Row="0" Margin="30,0,0,0" HorizontalOptions="Start" HeightRequest="35" Source="regresaricono.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MostrarVistaDiaCommand}" CommandParameter="{Binding DiaSemana}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+                
+            </Image>
+        <Label VerticalTextAlignment="Center" Margin="50,0,0,0" FontSize="25" FontAttributes="Bold" Grid.Column="1" TextColor="Black" Text="Detalles"></Label>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+        <VerticalStackLayout Grid.Row="1">
+            <Border StrokeThickness="5" BackgroundColor="Gray">
+            <Image  HorizontalOptions="Center" Source="{Binding Receta.Imagen}"></Image></Border>
+            <Label  Margin="10" FontAttributes="Bold" Text="{Binding Receta.Nombre}" FontSize="25" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5" FontAttributes="Bold" Text="Ingredientes:" FontSize="18" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5"  TextTransform="Lowercase" Text="{Binding Receta.Ingredientes}" FontSize="18" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5" FontAttributes="Bold" Text="Tiempo de Preparación:" FontSize="18" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5"   FontSize="18" TextColor="Black">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  FontSize="18" TextColor="Black" Text="{Binding Receta.TiempoPreparacion}"></Span>
+                        <Span  FontSize="18" TextColor="Black" Text=" minutos"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label  Margin="30,10,10,5" FontAttributes="Bold" Text="Tiempo de Coccción:" FontSize="18" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5"   FontSize="18" TextColor="Black">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  FontSize="18" TextColor="Black" Text="{Binding Receta.TiempoCoccion}"></Span>
+                        <Span  FontSize="18" TextColor="Black" Text=" minutos"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label  Margin="30,10,10,5" FontAttributes="Bold" Text="Instrucciones:" FontSize="18" TextColor="Black"></Label>
+            <Label  Margin="30,10,10,5"  TextTransform="Lowercase" Text="{Binding Receta.Instrucciones}" FontSize="18" TextColor="Black"></Label>
+
+
+            <VerticalStackLayout BindingContext="{Binding Receta}">
+                
+            </VerticalStackLayout>
+        </VerticalStackLayout></ScrollView>
+    </Grid>
+</ContentPage>

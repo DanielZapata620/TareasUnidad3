@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanificacionReceta.Views.InicioView"
+             
+             Title="ChefMate" Background="White" >
+    
+    <Grid  RowDefinitions=".3*,.1*,.15*,.15*,.15*,.15*,.23*,.1*" ColumnDefinitions=".5*,.5*">
+
+        <VerticalStackLayout   Grid.Column="0" Grid.Row="0 " Margin="0,20,0,0">
+            <Label TextColor="Black" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" Margin="0,20,0,20" >¡Bienvenido!</Label>
+            <Label TextColor="Black"  HorizontalTextAlignment="Center" Margin="10,0,10,0" FontAttributes="Italic">Su planificacion semanal se encuentra aqui, seleccione un dia para visualizar las recetas planeadas</Label>
+        </VerticalStackLayout>
+                
+           
+            <Image Grid.Column="1" Grid.Row="0" VerticalOptions="Center"   Source="zanahoriahome.png"></Image>
+            <Image Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Margin="10" HeightRequest="40"  Source="listaeliminaricono.png">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CambiarVistaCommand}" CommandParameter="EliminarLista"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+            </Image>
+
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Lunes" Margin="30,30,30,0" BackgroundColor="#c7c09b" Grid.Column="0" Grid.Row="3" Text="Lunes"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Martes" Margin="30,30,30,0" BackgroundColor="#f4cdc8" Grid.Column="1" Grid.Row="3" Text="Martes"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Miercoles" Margin="30,30,30,0" BackgroundColor="#f4cdc8" Grid.Column="0" Grid.Row="4" Text="Miercoles"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Jueves" Margin="30,30,30,0" BackgroundColor="#c7c09b" Grid.Column="1" Grid.Row="4" Text="Jueves"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Viernes" Margin="30,30,30,0" BackgroundColor="#c7c09b" Grid.Column="0" Grid.Row="5" Text="Viernes"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Sabado" Margin="30,30,30,0" BackgroundColor="#f4cdc8" Grid.Column="1" Grid.Row="5" Text="Sabado"></Button>
+        <Button Command="{Binding MostrarVistaDiaCommand}" CommandParameter="Domingo" Margin="30,30,30,40" BackgroundColor="#FDC98A"  Grid.Row="6" Grid.ColumnSpan="2"  Text="Domingo"></Button>
+        <Label Grid.ColumnSpan="2" Grid.Row="7" TextColor="Black" HorizontalTextAlignment="End"  FontAttributes="Bold" Margin="0,0,20,0" >Desarrollado por: Daniel Zapata Vargas</Label>    
+    </Grid>
+</ContentPage>

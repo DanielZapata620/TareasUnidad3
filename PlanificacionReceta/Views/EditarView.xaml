@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanificacionReceta.Views.EditarView"
+             Title="ChefMate" Background="White">
+    <Grid RowDefinitions=".1*,.9*">
+        <Grid Grid.Row="0" Margin="10" ColumnDefinitions=".2*,auto,.2*">
+            <Image Grid.Column="0" HeightRequest="30" Source="regresaricono.png" Margin="5">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MostrarVistaDiaCommand}" CommandParameter="{Binding DiaSemana}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Grid.Column="1"  Margin="10" FontSize="28" FontAttributes="Bold"  TextColor="Black" Text="Editar Receta" ></Label>
+
+
+            <Image Grid.Column="5" HeightRequest="35" Source="guardaricono.png" Margin="5">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EditarCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Grid.Row="1" Margin="20">
+                <Label Margin="10" Text="Nombre:" TextColor="Black" FontSize="18"></Label>
+                <Entry Placeholder="Ingresa tu respuesta aquí." Text="{Binding Receta.Nombre}"  TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" Text="Imagen:" TextColor="Black" FontSize="18"></Label>
+                <Entry Placeholder="Url de la imagen" Text="{Binding Receta.Imagen}"  TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" Text="Ingredientes:" TextColor="Black" FontSize="18"></Label>
+                <Entry Placeholder="Ingresa tu respuesta aquí." Text="{Binding Receta.Ingredientes}"  TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" Text="Tiempo de preparacion:" TextColor="Black" FontSize="18"></Label>
+                <Entry Placeholder="Ingresa el tiempo en minutos." Keyboard="Numeric" Text="{Binding Receta.TiempoPreparacion}" TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" Text="Tiempo de coccion:" TextColor="Black" FontSize="18"></Label>
+                <Entry Placeholder="Ingresa el tiempo en minutos" Keyboard="Numeric" Text="{Binding Receta.TiempoCoccion}" TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" Text="Instrucciones:" TextColor="Black" FontSize="18" ></Label>
+                <Entry Placeholder="Ingresa tu respuesta aquí." Text="{Binding Receta.Instrucciones}" TextColor="Black" FontSize="18" ></Entry>
+                <Label Margin="10" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Italic" Text="{Binding Error}" TextColor="Red" FontSize="18" ></Label>
+
+
+
+            </StackLayout>
+        </ScrollView>
+
+
+    </Grid>
+</ContentPage>

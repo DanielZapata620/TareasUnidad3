@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanificacionReceta.Views.EliminarView"
+             xmlns:viewmodels="clr-namespace:PlanificacionReceta.ViewModels"
+             xmlns:views="clr-namespace:PlanificacionReceta.Views"
+             Title="ChefMate" Background="White" x:Name="eliminarview" x:DataType="viewmodels:PlanificacionViewModel" >
+    <Grid RowDefinitions=".1*,.9*">
+        <Grid Grid.Row="0" ColumnDefinitions=".5*,.5*">
+            <Image Margin="50,0,0,0" HorizontalOptions="Start" HeightRequest="35" Source="xicono.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MostrarVistaDiaCommand}" CommandParameter="{Binding DiaSemana}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="1" Margin="0,0,50,0" HorizontalOptions="End" HeightRequest="35" Source="okeliminaricono.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EliminarCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Image HeightRequest="120" HorizontalOptions="Center" Source="advertenciaicono.png"></Image>
+            <Label  Margin="30" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="¿Esta seguro de eliminar la siguiente receta?" TextColor="Red"></Label>
+            <VerticalStackLayout BindingContext="{Binding Receta}">
+                <views:RecetaView></views:RecetaView>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

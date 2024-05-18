@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanificacionReceta.Views.EliminarListaView"
+             Title="ChefMate" Background="White">
+    <Grid RowDefinitions=".1*,.9*">
+        <Grid Grid.Row="0" ColumnDefinitions=".5*,.5*">
+            <Image Margin="50,0,0,0" HorizontalOptions="Start" HeightRequest="35" Source="xicono.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CambiarVistaCommand}" CommandParameter="inicio"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Column="1" Margin="0,0,50,0" HorizontalOptions="End" HeightRequest="35" Source="okeliminaricono.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EliminarListaCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1"> 
+            <Image HeightRequest="120" HorizontalOptions="Center" Source="advertenciaicono.png"></Image>
+            <Label  Margin="30" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="Al aceptar dicha accion se eliminara toda su planificacion semanal " TextColor="Black"></Label>
+            <Label  Margin="30" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="¿Desea continuar?" TextColor="Red"></Label>
+            <VerticalStackLayout BindingContext="{Binding Receta}" Margin="80">
+                <Image VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" Source="eliminar.png"></Image>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

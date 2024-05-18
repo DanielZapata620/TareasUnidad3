@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PlanificacionReceta.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PlanificacionReceta"
+    xmlns:views="clr-namespace:PlanificacionReceta.Views"
+    xmlns:viewmodels="clr-namespace:PlanificacionReceta.ViewModels"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TitleColor="White"
+    Shell.BackgroundColor="#424242"
+    Title="ChefMate">
+
+    <Shell.BindingContext>
+        <viewmodels:PlanificacionViewModel></viewmodels:PlanificacionViewModel>
+    </Shell.BindingContext>
+
+    
+    <ShellContent
+        
+        Title="Home"
+        ContentTemplate="{DataTemplate views:InicioView}"
+        Route="MainPage" />
+
+    <ShellContent
+    
+    Title="Home"
+    ContentTemplate="{DataTemplate views:EliminarView}"
+    Route="Eliminar" />
+
+    <ShellContent
+
+    Title="Home"
+    ContentTemplate="{DataTemplate views:VerDetallesView}"
+    Route="Detalles" />
+
+    <ShellContent
+
+    Title="Home"
+    ContentTemplate="{DataTemplate views:EliminarListaView}"
+    Route="EliminarLista" />
+
+
+    <ShellContent
+ 
+    Title="Home"
+    ContentTemplate="{DataTemplate views:EditarView}"
+    Route="editar" />
+
+    <ShellContent
+    
+    Title="Home"
+    ContentTemplate="{DataTemplate views:AgregarView}"
+    Route="Agregar" />
+
+    <ShellContent
+        
+        Title="Home"
+        ContentTemplate="{DataTemplate views:ListaDiariaView}"
+        Route="VistaDia" />
+   
+
+</Shell>
