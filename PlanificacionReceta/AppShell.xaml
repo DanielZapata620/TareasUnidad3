@@ -24,38 +24,38 @@
 
     <ShellContent
     
-    Title="Home"
+    Title="EliminarReceta"
     ContentTemplate="{DataTemplate views:EliminarView}"
     Route="Eliminar" />
 
     <ShellContent
 
-    Title="Home"
+    Title="Detalles"
     ContentTemplate="{DataTemplate views:VerDetallesView}"
     Route="Detalles" />
 
     <ShellContent
 
-    Title="Home"
+    Title="EliminarLista"
     ContentTemplate="{DataTemplate views:EliminarListaView}"
     Route="EliminarLista" />
 
 
     <ShellContent
  
-    Title="Home"
+    Title="Editar"
     ContentTemplate="{DataTemplate views:EditarView}"
     Route="editar" />
 
     <ShellContent
     
-    Title="Home"
+    Title="Agregar"
     ContentTemplate="{DataTemplate views:AgregarView}"
     Route="Agregar" />
 
     <ShellContent
         
-        Title="Home"
+        Title="ListaDiaria"
         ContentTemplate="{DataTemplate views:ListaDiariaView}"
         Route="VistaDia" />
    

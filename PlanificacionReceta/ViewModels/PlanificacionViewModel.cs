@@ -101,6 +101,7 @@ namespace PlanificacionReceta.ViewModels
 
         private void Editar()
         {
+            Error = "";
             if (Receta != null)
             {
                 if (string.IsNullOrWhiteSpace(Receta.Nombre))
@@ -169,7 +170,7 @@ namespace PlanificacionReceta.ViewModels
                 }
                 if (string.IsNullOrWhiteSpace(Receta.Imagen) || !Receta.Imagen.StartsWith("http") || !Receta.Imagen.EndsWith(".jpg"))
                 {
-                    Error += "La url de la imagen no es correctaL \n ";
+                    Error += "La url de la imagen no es correcta \n ";
                 }
                 if (string.IsNullOrWhiteSpace(Receta.Instrucciones))
                 {
@@ -281,8 +282,8 @@ namespace PlanificacionReceta.ViewModels
 
         private void MostrarVistaDia(string dia)
         {
-          
 
+            Receta = null;
             DiaSemana = dia;
             PropertyChanged?.Invoke(this, new(nameof(DiaSemana)));
             PropertyChanged?.Invoke(this, new(nameof(Receta)));

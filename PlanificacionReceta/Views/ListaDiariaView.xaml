@@ -49,12 +49,7 @@
             </Image>
         </Grid>
         <ScrollView Grid.Row="2">
-        <!--<StackLayout Grid.Row="1">
-            
-            <views:RecetaView></views:RecetaView>
-            <views:RecetaView Margin="0,10,0,10"></views:RecetaView>
-            <views:RecetaView></views:RecetaView>
-        </StackLayout>-->
+
 
             <CollectionView ItemsSource="{Binding ListaRecetaFiltrada}" SelectedItem="{Binding Receta}" SelectionMode="Single">
                 <CollectionView.ItemTemplate>
